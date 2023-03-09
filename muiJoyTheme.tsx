@@ -1,13 +1,11 @@
+import React from 'react';
 import {
   // @ts-ignore
   Experimental_CssVarsProvider as CssVarsProvider,
   // @ts-ignore
   experimental_extendTheme as extendMuiTheme,
 } from '@mui/material/styles';
-import {extendTheme as extendJoyTheme} from '@mui/joy/styles';
-import React from 'react';
 import {colors, GlobalStyles} from "@mui/material";
-import {deepmerge} from "@mui/utils"
 import kookoGreen from "./colors/kookoGreen";
 import kookoGreenLight from "./colors/kookoGreenLight";
 import kookoGreenDark from "./colors/kookoGreenDark";
@@ -134,18 +132,32 @@ const muiTheme = extendMuiTheme({
       'sans-serif',
     ].join(','),
     h1: {
+      fontFamily: "Montserrat",
+      fontSize: '4rem',
+      fontWeight: '500',
       [vanillaMediaQueries.mobile]: {
         fontSize: '2rem',
       },
     },
     h2: {
+      fontFamily: "Montserrat",
+      fontSize: '2.5rem',
+      fontWeight: '500',
       [vanillaMediaQueries.mobile]: {
         fontSize: '1.5rem',
       },
     },
     h3: {
+      textAlign: "left",
+      fontSize: '2rem',
       [vanillaMediaQueries.mobile]: {
         fontSize: '1.2rem',
+      },
+    },
+    h4: {
+      fontSize: '1.5rem',
+      [vanillaMediaQueries.mobile]: {
+        fontSize: '1rem',
       },
     },
   },
@@ -153,7 +165,7 @@ const muiTheme = extendMuiTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          fontFamily: "var(--mui-fontFamily-display)",
+          fontFamily: "Manrope",
           letterSpacing: .8,
           borderRadius: 100,
           lineHeight: 1.5,
@@ -163,9 +175,11 @@ const muiTheme = extendMuiTheme({
           color: kookoGreenLight[50]
         },
       }
-    }
+    },
   }
 });
+
+/*
 const joyTheme = extendJoyTheme({
   // This is required to point to `var(--mui-*)` because we are using
   // `CssVarsProvider` from Material UI.
@@ -235,7 +249,7 @@ const joyTheme = extendJoyTheme({
   },
 });
 const theme = deepmerge(muiTheme, joyTheme);
-
+*/
 const useEnhancedEffect = typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect;
 
 const ThemeWrapper: React.FunctionComponent<{ children: any }> = ({children}) => {
@@ -248,7 +262,7 @@ const ThemeWrapper: React.FunctionComponent<{ children: any }> = ({children}) =>
 
   return (
     <CssVarsProvider
-      theme={theme}
+      theme={muiTheme}
       attribute="data-mui-color-scheme"
       colorSchemeNode={node || null}
       colorSchemeSelector="#mode-toggle"
@@ -256,7 +270,7 @@ const ThemeWrapper: React.FunctionComponent<{ children: any }> = ({children}) =>
     >
       <GlobalStyles styles={{
         body: {
-          fontFamily: "var(--mui-fontFamily-body)",
+          fontFamily: "Manrope",
           background: 'var(--mui-palette-background-default)',
           margin: 0,
           transition: node ? "background .4s cubic-bezier(0.4, 0, 0.2, 1)" : "none"

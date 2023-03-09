@@ -2,7 +2,7 @@ import * as React from 'react';
 import {GatsbySSR} from "gatsby";
 import ThemeWrapper from "./muiJoyTheme";
 import Layout from "@templates/layout/layout";
-import {getInitColorSchemeScript} from "@mui/joy";
+import {getInitColorSchemeScript} from "@mui/material";
 
 export const wrapRootElement: GatsbySSR["wrapRootElement"] = ({element}) => {
   return (

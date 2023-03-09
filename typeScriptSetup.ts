@@ -1,3 +1,4 @@
+/*
 import {
   CssVarsThemeOptions,
   Overlays,
@@ -22,7 +23,7 @@ import {
   TypeAction,
   TypeText,
   ZIndex,
-} from '@mui/material/styles';
+} from '@mui/joy/styles';
 import {Theme as JoyTheme} from '@mui/joy/styles';
 import {CommonColors, TypeBackground} from "@mui/material";
 
@@ -87,3 +88,4 @@ declare module '@mui/material/styles' {
     vars: JoyTheme['vars'];
   }
 }
+*/
