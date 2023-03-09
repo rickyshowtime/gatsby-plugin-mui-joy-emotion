@@ -4,13 +4,14 @@ import {
   // @ts-ignore
   experimental_extendTheme as extendMuiTheme,
 } from '@mui/material/styles';
-import { extendTheme as extendJoyTheme } from '@mui/joy/styles';
+import {extendTheme as extendJoyTheme} from '@mui/joy/styles';
 import React from 'react';
-import {Button, colors, createTheme, GlobalStyles, useColorScheme} from "@mui/material";
-import { deepmerge } from "@mui/utils"
+import {colors, GlobalStyles} from "@mui/material";
+import {deepmerge} from "@mui/utils"
 import kookoGreen from "./colors/kookoGreen";
 import kookoGreenLight from "./colors/kookoGreenLight";
 import kookoGreenDark from "./colors/kookoGreenDark";
+import {breakpoints, vanillaMediaQueries} from "./breakpoints/breakpoints";
 
 const muiTheme = extendMuiTheme({
   // This is required to point to `var(--joy-*)` because we are using
@@ -24,8 +25,13 @@ const muiTheme = extendMuiTheme({
           contrastText: kookoGreenDark[900]
         },
         secondary: {
-          main: kookoGreenDark[800],
-          contrastText: kookoGreenLight[300]
+          main: kookoGreen[800],
+          contrastText: kookoGreenDark[50]
+        },
+        tertiary: {
+          main: kookoGreenDark[100],
+          contrastText: kookoGreenDark[700],
+          semiTransparent: `${kookoGreenDark[100]}d9`
         },
         common: {
           white: '#FFF',
@@ -34,7 +40,7 @@ const muiTheme = extendMuiTheme({
         divider: colors.grey[200],
         text: {
           primary: colors.grey[800],
-          secondary: colors.grey[600],
+          secondary: colors.grey[700],
         },
         background: {
           default: kookoGreenLight[50],
@@ -43,6 +49,23 @@ const muiTheme = extendMuiTheme({
           main: "rgba(255,255,255, .6)",
           contrastText: kookoGreenLight[50],
           secondary: "rgba(0,0,0, .4)",
+        },
+        cardBg: {
+          //main: "linear-gradient(0deg, #D6EDE4 10%, rgba(218, 237, 230, 0.98) 25%, rgba(218, 237, 230, 0.85) 45%, rgba(218, 237, 230, 0.53) 60%, rgba(218, 237, 230, 0.06) 75%, rgba(218, 237, 230, 0) 95%)",
+          main: "linear-gradient(0deg, #EEF8F4 10%, rgba(238, 248, 244, 0.98) 25%, rgba(238, 248, 244, 0.85) 45%, rgba(238, 248, 244, 0.53) 60%, rgba(238, 248, 244, 0.06) 75%, rgba(238, 248, 244, 0) 95%)",
+          contrastText: colors.grey[800]
+        },
+        bannerBg: {
+          main: "linear-gradient(90deg, #C7D7D3 70%, rgba(199, 215, 211, 0.95) 75%, rgba(199, 215, 211, 0) 100%)",
+          contrastText: colors.grey[800]
+        },
+        bannerMobileBg: {
+          main: "linear-gradient(0deg, #C7D7D3 25%, rgba(199, 215, 211, 0.8) 70%, rgba(199, 215, 211, 0.4) 100%)",
+          contrastText: colors.grey[800]
+        },
+        bannerMobileBgInverted: {
+          main: "linear-gradient(180deg, #C7D7D3 25%, rgba(199, 215, 211, 0.8) 70%, rgba(199, 215, 211, 0.4) 100%)",
+          contrastText: colors.grey[800]
         }
       },
     },
@@ -53,8 +76,13 @@ const muiTheme = extendMuiTheme({
           contrastText: kookoGreenLight[100]
         },
         secondary: {
-          main: kookoGreen[200],
+          main: kookoGreenDark[100],
           contrastText: kookoGreenDark[800]
+        },
+        tertiary: {
+          main: kookoGreenDark[400],
+          contrastText: kookoGreenDark[50],
+          semiTransparent: `${kookoGreenDark[400]}d9`
         },
         common: {
           white: '#FFF',
@@ -63,7 +91,7 @@ const muiTheme = extendMuiTheme({
         divider: colors.grey[800],
         text: {
           primary: colors.grey[100],
-          secondary: colors.grey[300],
+          secondary: colors.grey[200],
         },
         background: {
           default: kookoGreenDark.background,
@@ -72,40 +100,61 @@ const muiTheme = extendMuiTheme({
           main: "rgba(25,45,38, .4)",
           contrastText: kookoGreenDark[50],
           secondary: "rgba(0,0,0, .4)"
+        },
+        cardBg: {
+          main: "linear-gradient(0deg, #041610 20%, rgba(4, 22, 16, 0.8) 65%, rgba(4, 22, 16, 0) 100%)",
+          contrastText: colors.grey[300]
+        },
+        bannerBg: {
+          main: "linear-gradient(90deg, #1C2D26 70%, rgba(28, 45, 38, 0.95) 75%, rgba(28, 45, 38, 0) 100%)",
+          contrastText: colors.grey[300]
+        },
+        bannerMobileBg: {
+          main: "linear-gradient(180deg, #1C2D26 25%, rgba(28, 45, 38, 0.8) 70%, rgba(28, 45, 38, 0.4) 100%)",
+          contrastText: colors.grey[300]
+        },
+        bannerMobileBgInverted: {
+          main: "linear-gradient(180deg, #1C2D26 25%, rgba(28, 45, 38, 0.8) 70%, rgba(28, 45, 38, 0.4) 100%)",
+          contrastText: colors.grey[300]
         }
       },
     },
   },
   breakpoints: {
     values: {
-      xs: 0,
-      sm: 600,
-      md: 900,
-      lg: 1200,
-      xl: 1536,
+      ...breakpoints
     },
   },
   typography: {
+    fontFamily: [
+      'Manrope',
+      'Montserrat',
+      'Public Sans',
+      'Arial',
+      'sans-serif',
+    ].join(','),
     h1: {
-      '@media (max-width:600px)': {
+      [vanillaMediaQueries.mobile]: {
         fontSize: '2rem',
       },
     },
     h2: {
-      '@media (max-width:600px)': {
+      [vanillaMediaQueries.mobile]: {
         fontSize: '1.5rem',
       },
     },
     h3: {
-      '@media (max-width:600px)': {
+      [vanillaMediaQueries.mobile]: {
         fontSize: '1.2rem',
       },
-    }
+    },
   },
   components: {
     MuiButton: {
-      styleOverrides : {
+      styleOverrides: {
         root: {
+          fontFamily: "var(--mui-fontFamily-display)",
+          letterSpacing: .8,
           borderRadius: 100,
           lineHeight: 1.5,
           padding: "8px 16px",
@@ -174,8 +223,8 @@ const joyTheme = extendJoyTheme({
     },
   },
   fontFamily: {
-    display: '"Roboto","Helvetica","Arial",sans-serif',
-    body: '"Roboto","Helvetica","Arial",sans-serif',
+    display: '"Montserrat"',
+    body: '"Manrope"',
   },
   shadow: {
     xs: `var(--mui-shadowRing), ${muiTheme.shadows[1]}`,
@@ -196,6 +245,7 @@ const ThemeWrapper: React.FunctionComponent<{ children: any }> = ({children}) =>
     setNode(document.getElementById('mode-toggle'));
   }, []);
 
+
   return (
     <CssVarsProvider
       theme={theme}
@@ -204,7 +254,14 @@ const ThemeWrapper: React.FunctionComponent<{ children: any }> = ({children}) =>
       colorSchemeSelector="#mode-toggle"
       modeStorageKey="theme"
     >
-      <GlobalStyles styles={{body: {background:'var(--mui-palette-background-default)', margin:0, transition: node ? "background .4s cubic-bezier(0.4, 0, 0.2, 1)" : "none"}}}/>
+      <GlobalStyles styles={{
+        body: {
+          fontFamily: "var(--mui-fontFamily-body)",
+          background: 'var(--mui-palette-background-default)',
+          margin: 0,
+          transition: node ? "background .4s cubic-bezier(0.4, 0, 0.2, 1)" : "none"
+        }
+      }}/>
       {children}
     </CssVarsProvider>
   );

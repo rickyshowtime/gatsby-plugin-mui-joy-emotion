@@ -9,17 +9,18 @@ const ThemeEnum = {
 }
 
 export type ThemeType = keyof typeof ThemeEnum;
-function themeAutoSwitch(): ThemeType {
+
+function themeAutoSwitch(): ThemeType{
   let colorScheme: ThemeType = LIGHT
   const currentDateTime = new Date();
   const evening = new Date()
   evening.setHours(14, 0, 0)
-  if(currentDateTime > evening ){
+  if (currentDateTime > evening) {
     colorScheme = DARK
   }
-  if(typeof window !== "undefined"){
+  if (typeof window !== "undefined") {
     const cachedColorScheme = window.localStorage.getItem("theme")
-    if(!cachedColorScheme){
+    if (!cachedColorScheme) {
       window.localStorage.setItem("theme", colorScheme)
     } else {
       const cachedTheme: ThemeType = cachedColorScheme === LIGHT ? LIGHT : DARK

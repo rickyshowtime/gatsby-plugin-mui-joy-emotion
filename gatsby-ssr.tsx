@@ -1,26 +1,36 @@
 import * as React from 'react';
 import {GatsbySSR} from "gatsby";
 import ThemeWrapper from "./muiJoyTheme";
-import {getInitColorSchemeScript} from "@mui/material/styles";
 import Layout from "@templates/layout/layout";
+import {getInitColorSchemeScript} from "@mui/joy";
 
-export const wrapRootElement: GatsbySSR["wrapRootElement"] = ({ element }) => {
+export const wrapRootElement: GatsbySSR["wrapRootElement"] = ({element}) => {
   return (
     <ThemeWrapper>
-      <Layout>
-        {element}
-      </Layout>
+      {element}
     </ThemeWrapper>
   );
 };
+export const wrapPageElement: GatsbySSR["wrapPageElement"] = ({element}) => {
+  return (
+    <Layout>
+      {element}
+    </Layout>
+  );
+};
 
-export const onRenderBody: GatsbySSR["onRenderBody"] = ({ setPreBodyComponents, setPostBodyComponents, setHtmlAttributes, setBodyAttributes }) => {
-  setHtmlAttributes({ lang: "fr_CH", id: "mode-toggle"})
+export const onRenderBody: GatsbySSR["onRenderBody"] = ({
+  setPreBodyComponents,
+  setPostBodyComponents,
+  setHtmlAttributes,
+  setBodyAttributes
+}) => {
+  setHtmlAttributes({lang: "fr-CH", id: "mode-toggle"})
   setPreBodyComponents([
     getInitColorSchemeScript({
-      defaultMode:'light',
-      modeStorageKey:'theme',
-      attribute:"data-mui-color-scheme"
+      defaultMode: 'light',
+      modeStorageKey: 'theme',
+      attribute: "data-mui-color-scheme"
     })
   ]);
   setPostBodyComponents([
@@ -49,8 +59,7 @@ export const onPreRenderHTML: GatsbySSR["onPreRenderHTML"] = ({ getHeadComponent
   });
   replaceHeadComponents(headComponents);
 };
-*/
-/*
+
 export const replaceRenderer: GatsbySSR["replaceRenderer"] = ({ bodyComponent, setHeadComponents, replaceBodyHTMLString }) => {
   const cache = getEmotionCache();
   const { extractCriticalToChunks } = createEmotionServer(cache);
@@ -73,4 +82,4 @@ export const replaceRenderer: GatsbySSR["replaceRenderer"] = ({ bodyComponent, s
   // render the result from `extractCritical`
   replaceBodyHTMLString(emotionStyles.html);
 };
- */
+*/

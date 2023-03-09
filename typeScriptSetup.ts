@@ -1,32 +1,29 @@
-import type {} from '@mui/material/themeCssVarsAugmentation';
 import {
-  experimental_extendTheme as extendMuiTheme,
-  PaletteColor,
-  TypeText,
-  TypeAction,
+  CssVarsThemeOptions,
   Overlays,
-  PaletteColorChannel,
   PaletteAlert,
   PaletteAppBar,
   PaletteAvatar,
   PaletteChip,
+  PaletteColor,
+  PaletteColorChannel,
   PaletteFilledInput,
   PaletteLinearProgress,
-  PaletteSlider,
   PaletteSkeleton,
+  PaletteSlider,
   PaletteSnackbarContent,
   PaletteSpeedDialAction,
   PaletteStepConnector,
   PaletteStepContent,
   PaletteSwitch,
   PaletteTableCell,
-  PaletteTextChannel,
   PaletteTooltip,
   Shadows,
+  TypeAction,
+  TypeText,
   ZIndex,
-  CssVarsThemeOptions,
 } from '@mui/material/styles';
-import { Theme as JoyTheme } from '@mui/joy/styles';
+import {Theme as JoyTheme} from '@mui/joy/styles';
 import {CommonColors, TypeBackground} from "@mui/material";
 
 type JoyComponents = CssVarsThemeOptions['components'];
@@ -54,13 +51,27 @@ declare module '@mui/joy/styles' {
     TableCell: PaletteTableCell;
     Tooltip: PaletteTooltip;
   }
-  interface PalettePrimary extends PaletteColor {}
-  interface PaletteInfo extends PaletteColor {}
-  interface PaletteSuccess extends PaletteColor {}
-  interface PaletteWarning extends PaletteColor {}
-  interface PaletteCommon extends CommonColors {}
-  interface PaletteText extends TypeText {}
-  interface PaletteBackground extends TypeBackground {}
+
+  interface PalettePrimary extends PaletteColor {
+  }
+
+  interface PaletteInfo extends PaletteColor {
+  }
+
+  interface PaletteSuccess extends PaletteColor {
+  }
+
+  interface PaletteWarning extends PaletteColor {
+  }
+
+  interface PaletteCommon extends CommonColors {
+  }
+
+  interface PaletteText extends TypeText {
+  }
+
+  interface PaletteBackground extends TypeBackground {
+  }
 
   interface ThemeVars {
     // attach to Joy UI `theme.vars`
