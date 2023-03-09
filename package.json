@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/rickyshowtime/gatsby-plugin-mui-joy-emotion.git"
   },
+  "peerDependencies": {
+    "gatsby": "^5.0.0"
+  },
   "keywords": [
     "Mui",
     "Joy",
