@@ -1,3 +1,25 @@
 {
-  "name": "gatsby-plugin-mui-joy-emotion"
+  "name": "gatsby-plugin-mui-joy-emotion",
+  "description": "Ui Theme config for Kooko website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rickyshowtime/gatsby-plugin-mui-joy-emotion.git"
+  },
+  "keywords": [
+    "Mui",
+    "Joy",
+    "Gatsby",
+    "Plugin",
+    "Kooko"
+  ],
+  "author": "rickyshowtime",
+  "bugs": {
+    "url": "https://github.com/rickyshowtime/gatsby-plugin-mui-joy-emotion/issues"
+  },
+  "homepage": "https://github.com/rickyshowtime/gatsby-plugin-mui-joy-emotion#readme"
 }
