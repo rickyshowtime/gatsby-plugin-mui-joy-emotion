@@ -3,8 +3,9 @@ import * as React from 'react';
 import {GatsbyBrowser} from "gatsby";
 import ThemeWrapper from "./muiJoyTheme";
 import Layout from "@templates/layout/layout";
+import "./styles/html.css"
 import "./styles/background.css"
-
+import "./styles/dynamicColors.css"
 export const wrapRootElement: GatsbyBrowser["wrapRootElement"] = ({element}) => {
   //themeAutoSwitch()
   return (

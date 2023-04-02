@@ -31,6 +31,10 @@ const muiTheme = extendMuiTheme({
           contrastText: kookoGreenDark[700],
           semiTransparent: `${kookoGreenDark[100]}d9`
         },
+        highContrast: {
+          main: kookoGreenDark[800],
+          contrastText: kookoGreenLight[100],
+        },
         common: {
           white: '#FFF',
           black: '#09090D',
@@ -42,6 +46,11 @@ const muiTheme = extendMuiTheme({
         },
         background: {
           default: kookoGreenLight[50],
+        },
+        scrollbar: {
+          track: `${kookoGreenDark[100]}d9`,
+          thumb: `${kookoGreenLight[100]}`,
+          hover:`${kookoGreenLight[50]}ec`
         },
         card: {
           main: "rgba(255,255,255, .6)",
@@ -82,6 +91,10 @@ const muiTheme = extendMuiTheme({
           contrastText: kookoGreenDark[50],
           semiTransparent: `${kookoGreenDark[400]}d9`
         },
+        highContrast: {
+          main: kookoGreenLight[400],
+          contrastText: kookoGreenDark[800],
+        },
         common: {
           white: '#FFF',
           black: '#09090D',
@@ -93,6 +106,11 @@ const muiTheme = extendMuiTheme({
         },
         background: {
           default: kookoGreenDark.background,
+        },
+        scrollbar: {
+          track: `${kookoGreenDark[400]}d9`,
+          thumb: kookoGreenDark[300],
+          hover: kookoGreenDark[200]
         },
         card: {
           main: "rgba(25,45,38, .4)",
