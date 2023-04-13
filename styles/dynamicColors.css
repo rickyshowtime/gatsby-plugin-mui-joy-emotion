@@ -2,11 +2,12 @@
     --accordion-bg-color: var(--mui-palette-secondary-contrastText);
     --formCard-bg-gradient: linear-gradient(100deg, rgba(214, 237, 228, 0.8) 5%, rgba(214, 237, 228, 0.6) 30%, rgba(214, 237, 228, 0) 50%, rgba(214, 237, 228, 0.6) 95%), rgba(214, 237, 228, 0.3);
     --formCard-bg-gradient-mobile: linear-gradient(10deg, rgba(214, 237, 228, 0.8) 5%, rgba(214, 237, 228, 0.6) 30%, rgba(214, 237, 228, 0) 50%, rgba(214, 237, 228, 0.6) 95%), rgba(214, 237, 228, 0.3);
+    --card-bg-blur: blur(10px) brightness(1.1);
 }
 
 html[data-mui-color-scheme="dark"] {
     --accordion-bg-color: var(--mui-palette-tertiary-semiTransparent);
     --formCard-bg-gradient: linear-gradient(100deg, rgba(1, 19, 13, 0.8) 5%, rgba(1, 19, 13, 0.6) 30%, rgba(1, 19, 13, 0) 50%, rgba(1, 19, 13, 0.6) 95%), rgba(1, 19, 13, 0.3);
     --formCard-bg-gradient-mobile: linear-gradient(10deg, rgba(1, 19, 13, 0.8) 5%, rgba(1, 19, 13, 0.6) 30%, rgba(1, 19, 13, 0) 50%, rgba(1, 19, 13, 0.6) 95%), rgba(1, 19, 13, 0.3);
-
+    --card-bg-blur: blur(10px) brightness(1.1);
 }
