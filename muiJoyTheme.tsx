@@ -10,6 +10,35 @@ import kookoGreen from "./colors/kookoGreen";
 import kookoGreenLight from "./colors/kookoGreenLight";
 import kookoGreenDark from "./colors/kookoGreenDark";
 import {breakpoints, vanillaMediaQueries} from "./breakpoints/breakpoints";
+let muiLightColors = {}
+let muiDarkColors = {}
+for (const key in colors) {
+  // skip loop if the property is from prototype
+  //if (!colors.hasOwnProperty(key)) continue;
+
+  // @ts-ignore
+  const obj = colors[key];
+  for (const prop in obj) {
+    // skip loop if the property is from prototype
+    if (!obj.hasOwnProperty(prop)) continue;
+    muiLightColors = {
+      ...muiLightColors,
+      [key]: {
+        bg: obj["100"],
+        text: obj["900"]
+      }
+    }
+    muiDarkColors = {
+      ...muiDarkColors,
+      [key]: {
+        bg: obj["800"],
+        text: obj["50"]
+      }
+    }
+  }
+}
+//console.log(muiLightColors)
+//console.log(muiDarkColors)
 
 const muiTheme = extendMuiTheme({
   // This is required to point to `var(--joy-*)` because we are using
@@ -18,6 +47,9 @@ const muiTheme = extendMuiTheme({
   colorSchemes: {
     light: {
       palette: {
+        colors: {
+          ...muiLightColors
+        },
         primary: {
           main: kookoGreen[500],
           contrastText: kookoGreenDark[900]
@@ -78,6 +110,9 @@ const muiTheme = extendMuiTheme({
     },
     dark: {
       palette: {
+        colors: {
+          ...muiDarkColors
+        },
         primary: {
           main: kookoGreen[500],
           contrastText: kookoGreenLight[100]
