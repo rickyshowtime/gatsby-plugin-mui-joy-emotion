@@ -22,3 +22,9 @@
 .grecaptcha-badge{
     display:none !important;
 }
+@media only screen and (max-width: 600px) {
+    [data-testid="preview-status-indicator"] {
+        top: unset;
+        bottom: 0
+    }
+}
