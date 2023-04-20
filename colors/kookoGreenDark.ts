@@ -14,6 +14,6 @@ const kookoGreenDark = {
   A400: '#00f16f',
   A700: '#00d763',
   main: '#009f79',
-  background: '#00140E'
+  background: '#001d15'
 };
 export default kookoGreenDark;

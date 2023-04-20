@@ -77,7 +77,7 @@ const muiTheme = extendMuiTheme({
           secondary: colors.grey[700],
         },
         background: {
-          default: kookoGreenLight[50],
+          default: kookoGreenLight.background,
         },
         scrollbar: {
           track: `${kookoGreenDark[100]}d9`,
@@ -85,9 +85,11 @@ const muiTheme = extendMuiTheme({
           hover:`${kookoGreenLight[50]}ec`
         },
         card: {
-          main: "rgba(255,255,255, .5)",
+          main: "rgba(247,255,253, .5)",
+          paper: "rgba(247,255,253, .9)",
           contrastText: kookoGreenLight[50],
           secondary: "rgba(0,0,0, .4)",
+          outline: kookoGreenLight[100],
         },
         cardBg: {
           //main: "linear-gradient(0deg, #D6EDE4 10%, rgba(218, 237, 230, 0.98) 25%, rgba(218, 237, 230, 0.85) 45%, rgba(218, 237, 230, 0.53) 60%, rgba(218, 237, 230, 0.06) 75%, rgba(218, 237, 230, 0) 95%)",
@@ -95,15 +97,19 @@ const muiTheme = extendMuiTheme({
           contrastText: colors.grey[900]
         },
         bannerBg: {
-          main: "linear-gradient(90deg, #C7D7D3 70%, rgba(199, 215, 211, 0.95) 75%, rgba(199, 215, 211, 0) 100%)",
+          main: "linear-gradient(90deg, #cde8e1 70%, rgba(205, 232, 225, 0.95) 75%, rgba(205, 232, 225, 0) 100%)",
           contrastText: colors.grey[900]
         },
         bannerMobileBg: {
-          main: "linear-gradient(0deg, #C7D7D3 25%, rgba(199, 215, 211, 0.8) 70%, rgba(199, 215, 211, 0.4) 100%)",
+          main: "linear-gradient(0deg, #cde8e1 25%, rgba(205, 232, 225, 0.8) 70%, rgba(205, 232, 225, 0.4) 100%)",
           contrastText: colors.grey[900]
         },
         bannerMobileBgInverted: {
-          main: "linear-gradient(180deg, #C7D7D3 25%, rgba(199, 215, 211, 0.8) 70%, rgba(199, 215, 211, 0.4) 100%)",
+          main: "linear-gradient(180deg, #cde8e1 25%, rgba(205, 232, 225, 0.8) 70%, rgba(205, 232, 225, 0.4) 100%)",
+          contrastText: colors.grey[900]
+        },
+        bannerBlog: {
+          main: "linear-gradient(180deg, #cde8e1 15%, rgba(205, 232, 225, 0.8) 35%, rgba(205, 232, 225, 0.4) 100%)",
           contrastText: colors.grey[900]
         }
       },
@@ -148,9 +154,11 @@ const muiTheme = extendMuiTheme({
           hover: kookoGreenDark[200]
         },
         card: {
-          main: "rgba(25,45,38, .5)",
+          main: "rgba(5,15,12, .5)",
+          paper: "rgba(5,15,12, .9)",
           contrastText: kookoGreenDark[50],
-          secondary: "rgba(0,0,0, .4)"
+          secondary: "rgba(0,0,0, .4)",
+          outline: "rgba(1,16,13,0.9)",
         },
         cardBg: {
           main: "linear-gradient(0deg, #041610 20%, rgba(4, 22, 16, 0.8) 65%, rgba(4, 22, 16, 0) 100%)",
@@ -166,6 +174,10 @@ const muiTheme = extendMuiTheme({
         },
         bannerMobileBgInverted: {
           main: "linear-gradient(180deg, #1C2D26 25%, rgba(28, 45, 38, 0.8) 70%, rgba(28, 45, 38, 0.4) 100%)",
+          contrastText: colors.grey[100]
+        },
+        bannerBlog: {
+          main: "linear-gradient(180deg, #1C2D26 15%, rgba(28, 45, 38, 0.8) 35%, rgba(28, 45, 38, 0.4) 100%)",
           contrastText: colors.grey[100]
         }
       },
@@ -226,6 +238,13 @@ const muiTheme = extendMuiTheme({
         },
         containedPrimary: {
           color: kookoGreenLight[50]
+        },
+      }
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          background: "var(--mui-palette-card-paper)"
         },
       }
     },

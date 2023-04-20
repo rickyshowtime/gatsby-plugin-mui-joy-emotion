@@ -14,6 +14,6 @@ const kookoGreenLight = {
   A400: '#90ffcf',
   A700: '#77ffc4',
   main: '#009f79',
-  background: '#eef8f4'
+  background: '#eafff6'
 };
 export default kookoGreenLight;
