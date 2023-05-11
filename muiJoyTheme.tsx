@@ -91,6 +91,10 @@ const muiTheme = extendMuiTheme({
           secondary: "rgba(0,0,0, .4)",
           outline: kookoGreenLight[100],
         },
+        navBg: {
+          main: "linear-gradient(180deg, #cde8e1 15%, rgba(205, 232, 225, 0.8) 20%, rgba(205, 232, 225, 0.4) 40%)",
+          contrastText: colors.grey[900]
+        },
         cardBg: {
           //main: "linear-gradient(0deg, #D6EDE4 10%, rgba(218, 237, 230, 0.98) 25%, rgba(218, 237, 230, 0.85) 45%, rgba(218, 237, 230, 0.53) 60%, rgba(218, 237, 230, 0.06) 75%, rgba(218, 237, 230, 0) 95%)",
           main: "linear-gradient(0deg, #EEF8F4 10%, rgba(238, 248, 244, 0.98) 25%, rgba(238, 248, 244, 0.85) 45%, rgba(238, 248, 244, 0.53) 60%, rgba(238, 248, 244, 0.06) 75%, rgba(238, 248, 244, 0) 95%)",
@@ -98,6 +102,10 @@ const muiTheme = extendMuiTheme({
         },
         bannerBg: {
           main: "linear-gradient(90deg, #cde8e1 70%, rgba(205, 232, 225, 0.95) 75%, rgba(205, 232, 225, 0) 100%)",
+          contrastText: colors.grey[900]
+        },
+        heroBg: {
+          main: "linear-gradient(90deg, #cde8e1 35%, rgba(205, 232, 225, 0.95) 40%, rgba(205, 232, 225, 0.6) 60%, rgba(205, 232, 225, 0) 80%)",
           contrastText: colors.grey[900]
         },
         bannerMobileBg: {
@@ -160,6 +168,10 @@ const muiTheme = extendMuiTheme({
           secondary: "rgba(0,0,0, .4)",
           outline: "rgba(1,16,13,0.9)",
         },
+        navBg: {
+          main: "linear-gradient(180deg, #1C2D26 15%, rgba(28, 45, 38, 0.8) 20%, rgba(28, 45, 38, 0.4) 40%)",
+          contrastText: colors.grey[100]
+        },
         cardBg: {
           main: "linear-gradient(0deg, #041610 20%, rgba(4, 22, 16, 0.8) 65%, rgba(4, 22, 16, 0) 100%)",
           contrastText: colors.grey[100]
@@ -167,6 +179,10 @@ const muiTheme = extendMuiTheme({
         bannerBg: {
           main: "linear-gradient(90deg, #1C2D26 70%, rgba(28, 45, 38, 0.95) 75%, rgba(28, 45, 38, 0) 100%)",
           contrastText: colors.grey[100]
+        },
+        heroBg: {
+          main: "linear-gradient(90deg, #1C2D26 35%, rgba(28, 45, 38, 0.95) 40%, rgba(28, 45, 38, 0.6) 60%, rgba(28, 45, 38, 0) 80%)",
+          contrastText: colors.grey[900]
         },
         bannerMobileBg: {
           main: "linear-gradient(180deg, #1C2D26 25%, rgba(28, 45, 38, 0.8) 70%, rgba(28, 45, 38, 0.4) 100%)",
