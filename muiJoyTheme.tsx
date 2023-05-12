@@ -92,7 +92,7 @@ const muiTheme = extendMuiTheme({
           outline: kookoGreenLight[100],
         },
         navBg: {
-          main: "linear-gradient(180deg, #cde8e1 15%, rgba(205, 232, 225, 0.8) 20%, rgba(205, 232, 225, 0.4) 40%)",
+          main: "linear-gradient(180deg, #cde8e1 15%, rgba(205, 232, 225, 0.8) 25%, rgba(205, 232, 225, 0.1) 90%)",
           contrastText: colors.grey[900]
         },
         cardBg: {
@@ -105,7 +105,7 @@ const muiTheme = extendMuiTheme({
           contrastText: colors.grey[900]
         },
         heroBg: {
-          main: "linear-gradient(90deg, #cde8e1 35%, rgba(205, 232, 225, 0.95) 40%, rgba(205, 232, 225, 0.6) 60%, rgba(205, 232, 225, 0) 80%)",
+          main: "linear-gradient(90deg, #cde8e1 35%, rgba(205, 232, 225, 0.7) 65%, rgba(205, 232, 225, 0.1) 75%)",
           contrastText: colors.grey[900]
         },
         bannerMobileBg: {
@@ -169,7 +169,7 @@ const muiTheme = extendMuiTheme({
           outline: "rgba(1,16,13,0.9)",
         },
         navBg: {
-          main: "linear-gradient(180deg, #1C2D26 15%, rgba(28, 45, 38, 0.8) 20%, rgba(28, 45, 38, 0.4) 40%)",
+          main: "linear-gradient(180deg, #1C2D26 15%, rgba(28, 45, 38, 0.8) 25%, rgba(28, 45, 38, 0.1) 90%)",
           contrastText: colors.grey[100]
         },
         cardBg: {
@@ -181,7 +181,7 @@ const muiTheme = extendMuiTheme({
           contrastText: colors.grey[100]
         },
         heroBg: {
-          main: "linear-gradient(90deg, #1C2D26 35%, rgba(28, 45, 38, 0.95) 40%, rgba(28, 45, 38, 0.6) 60%, rgba(28, 45, 38, 0) 80%)",
+          main: "linear-gradient(90deg, #1C2D26 35%, rgba(28, 45, 38, 0.7) 65%, rgba(28, 45, 38, 0.1) 75%)",
           contrastText: colors.grey[900]
         },
         bannerMobileBg: {
