@@ -28,7 +28,7 @@ export const onRenderBody: GatsbySSR["onRenderBody"] = ({
   setHtmlAttributes({lang: "fr-CH", id: "mode-toggle"})
   setPreBodyComponents([
     getInitColorSchemeScript({
-      defaultMode: 'light',
+      defaultMode: 'system',
       modeStorageKey: 'theme',
       attribute: "data-mui-color-scheme"
     })
