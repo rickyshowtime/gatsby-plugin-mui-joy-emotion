@@ -11,7 +11,7 @@ const ThemeEnum = {
 export type ThemeType = keyof typeof ThemeEnum;
 
 function themeAutoSwitch(): ThemeType{
-  let colorScheme: ThemeType = LIGHT
+  let colorScheme: ThemeType = SYSTEM
   const currentDateTime = new Date();
   const evening = new Date()
   evening.setHours(14, 0, 0)
