@@ -1,7 +1,10 @@
-html,body {
-    width: 100%;
+html {
+    overflow: "initial";
+    /*scroll-behavior: auto !important;*/
+}
+
+body {
     overflow-x: hidden;
-    scroll-behavior: auto !important;
 }
 /* width */
 ::-webkit-scrollbar {
