@@ -350,6 +350,7 @@ const ThemeWrapper: React.FunctionComponent<{ children: any }> = ({children}) =>
 
   return (
     <CssVarsProvider
+      defaultMode="system"
       theme={muiTheme}
       attribute="data-mui-color-scheme"
       colorSchemeNode={node || null}
