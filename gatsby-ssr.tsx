@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {GatsbySSR} from "gatsby";
 import ThemeWrapper from "./muiJoyTheme";
-import Layout from "@templates/layout/layout";
 import {getInitColorSchemeScript} from "@mui/material";
 
 export const wrapRootElement: GatsbySSR["wrapRootElement"] = ({element}) => {
@@ -9,13 +8,6 @@ export const wrapRootElement: GatsbySSR["wrapRootElement"] = ({element}) => {
     <ThemeWrapper>
       {element}
     </ThemeWrapper>
-  );
-};
-export const wrapPageElement: GatsbySSR["wrapPageElement"] = ({element}) => {
-  return (
-    <Layout>
-      {element}
-    </Layout>
   );
 };
 
